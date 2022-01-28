@@ -1,21 +1,25 @@
-#Base e biblioteca:
-from random import randint
-IA = randint(0, 20)
-print('Tente adinhivar o número na minha mente')
-acertou = False
-ideia = 0
+#Biblioteca:
+import random
+def gera():
+    return random.randint(0,25)
 
-#Ideias e erros:
-while not acertou:
-    jogador = int(input('Alguma ideia?'))
-    ideia += 1
-    if jogador == IA:
-        acertou = True
-    else:
-        if jogador < IA:
-            print('Mais... tente novamente.')
-        elif jogador > IA:
-            print('Menos... tente de novo.')
+#Jogo:
+numeroaleatorio = gera()
+print('Tente adivinhar um número aleatório de 0 à 25')
+jogada = int(input('Qual a sua ideia?: '))
+cont = 1
 
-#Parabéns:
-            print('Você acertou com {} tentativas. Muito bem!'.format(ideia))
+def game():
+    resposta = gera()
+    tentativa = 10
+while jogada != numeroaleatorio:
+    if jogada > numeroaleatorio:
+        print('Uh, foi quase, tente um número menor...')
+    elif jogada < numeroaleatorio:
+        print('Uh, foi quase, tente um número maior...')
+    jogada = int(input('Tente novamente: '))
+    cont += 1
+
+print("Parabéns, você venceu com {} tentativas você venceu!!!".format(cont))
+while True:
+    game()
