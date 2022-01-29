@@ -20,6 +20,6 @@ while jogada != numeroaleatorio:
     jogada = int(input('Tente novamente: '))
     cont += 1
 
-print("Parabéns, você venceu com {} tentativas você venceu!!!".format(cont))
+print("Parabéns, você venceu com {} tentativas!!!".format(cont))
 while True:
     game()
